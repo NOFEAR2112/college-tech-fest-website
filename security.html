@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"  href="styles.css">
+    <title>Security Verification</title>
+</head>
+<body class="security">
+    <header class="security-header" >
+        
+        <h1>Security Verification</h1>
+    </header>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+
+    <div class="security-container">
+        <div class="captcha-box">
+            <div class="captcha-image" id="captcha-image">
+                <!-- Captcha image will be generated here using JavaScript -->
+            </div>
+            <input type="text" class="captcha-input" id="captcha-input" placeholder="Enter captcha">
+            <button class="captcha-verify" onclick="verifyCaptcha()">Verify</button>
+        </div>
+
+        <div class="security-info">
+            <label for="keystrokes">Keystrokes: <span id="keystrokes">0</span></label><br>
+            <label for="mouse-movements">Mouse Movements: <span id="mouse-movements">0</span></label><br>
+            <label for="time-taken">Time Taken: <span id="time-taken">0 seconds</span></label>
+        </div>
+    </div>
+
+    <script>
+        let keystrokes = 0;
+        let mouseMovements = 0;
+        let startTime;
+    
+        // Function to generate a random captcha string
+        function generateRandomCaptcha(length) {
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let captcha = "";
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                captcha += charset[randomIndex];
+            }
+            return captcha;
+        }
+    
+        // Function to display the random captcha
+        function displayRandomCaptcha() {
+            const captchaText = generateRandomCaptcha(6); // You can adjust the length as needed
+            const captchaImage = document.getElementById('captcha-image');
+            captchaImage.textContent = captchaText;
+        }
+    
+        // Initial captcha display
+        displayRandomCaptcha();
+    
+        // Function to verify the captcha
+        function verifyCaptcha() {
+            const input = document.getElementById('captcha-input').value;
+            const captchaImage = document.getElementById('captcha-image');
+            const captchaText = captchaImage.textContent;
+    
+            if (input.toLowerCase() === captchaText.toLowerCase()) {
+                alert('Captcha verified successfully!');
+                // You can redirect the user to the next page or perform other actions here.
+                displayRandomCaptcha(); // Display a new captcha after verification.
+            } else {
+                alert('Captcha verification failed. Please try again.');
+                displayRandomCaptcha(); // Display a new captcha after verification failure.
+            }
+        }
+    
+        // Monitor keystrokes
+        document.addEventListener('keydown', function () {
+            keystrokes++;
+            document.getElementById('keystrokes').textContent = keystrokes;
+        });
+    
+        // Monitor mouse movements
+        document.addEventListener('mousemove', function () {
+            mouseMovements++;
+            document.getElementById('mouse-movements').textContent = mouseMovements;
+        });
+    
+        // Record start time
+        startTime = new Date().getTime();
+    
+        // Calculate time taken
+        window.addEventListener('beforeunload', function () {
+            const endTime = new Date().getTime();
+            const timeDiff = (endTime - startTime) / 1000; // in seconds
+            document.getElementById('time-taken').textContent = timeDiff + ' seconds';
+        });
+    
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+        });
+
+        
+
+
+        
+    </script>
+    
+</body>
+</html>

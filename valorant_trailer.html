@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valorant Trailer</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <video id="trailer" controls loop>
+        <source src="Episode_1_IGNITION_Official_Launch_Gameplay_Trailer_VAL_IhhjcB2ZjIM_248.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        window.onload = function() {
+            var video = document.getElementById("trailer");
+            video.play();
+        };
+    </script>
+</body>
+</html>

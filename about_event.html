@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add new styles for images to stay in their original position */
+        .default-image-position {
+            position: relative;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            max-width: 20%;
+            padding-top: 4px;
+            padding-right: 4px;
+        }
+    </style>
+    <title>About the Event</title>
+</head>
+<body id="sky-background">
+    <header>
+        <h1>About College Event 2023</h1>
+        <p>Your Ultimate College Experience Awaits!</p>
+    </header>
+
+    <br>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_event.html">About Event</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="registration.html">Registration</a></li>
+        </ul>
+    </nav>
+    <section id="joystick">
+        <div class="event-container" id="hackathon-box">
+            <h3>Hackathon</h3>
+            <p>A competitive coding challenge that tests your programming skills. Join and compete with fellow coders for the top prize.</p>
+            <p>Date: November 5, 2023</p>
+            <p>Time: 10:00 AM - 3:00 PM</p>
+            <img src="hackathon.png" alt="Hackathon Image" class="default-image-position">
+        </div>
+
+        <div class="event-container" id="ctf-box">
+            <h3>CTF (Capture The Flag)</h3>
+            <p>An exciting cybersecurity competition that challenges your hacking skills. Can you capture the flag?</p>
+            <p>Date: November 8, 2023</p>
+            <p>Time: 1:00 PM - 6:00 PM</p>
+            <img src="ctf.jpeg" alt="CTF Image" class="default-image-position">
+        </div>
+
+        <div class="event-container" id="ideathon-box">
+            <h3>Ideathon</h3>
+            <p>Unleash your creativity and innovative ideas in this idea-generation competition. It's time to bring your vision to life!</p>
+            <p>Date: November 10, 2023</p>
+            <p>Time: 2:00 PM - 5:00 PM</p>
+            <img src="ideathon.png" alt="Ideathon Image" class="default-image-position">
+        </div>
+
+        <div class="event-container" id="valorant" onclick="window.location.href = 'path-to-trailer-page.html';" style="cursor: pointer;">
+            <h3>Valorant Tournament</h3>
+            <p>Showcase your tactical skills in this intense gaming competition. Assemble your team and aim for victory.</p>
+            <p>Date: November 8, 2023</p>
+            <p>Time: 3:00 PM - 8:00 PM</p>
+            <img src="valorant.jpeg" alt="Valorant Image" class="default-image-position">
+        </div>
+
+        <div class="event-container" id="bgmi-box">
+            <h3>BGMI Championship</h3>
+            <p>Compete with the best in this BattleGrounds Mobile India championship. Win exciting prizes!</p>
+            <p>Date: November 9, 2023</p>
+            <p>Time: 2:00 PM - 6:00 PM</p>
+            <img src="bgmi.jpeg" alt="BGMI Image" class="default-image-position">
+        </div>
+
+        
+    </section>
+
+    <script>
+        const eventContainers = document.querySelectorAll('.event-container');
+    
+        eventContainers.forEach(container => {
+            container.addEventListener('contextmenu', function(event) {
+                event.preventDefault(); // Prevent the context menu from appearing
+                container.style.border = '2px solid #ff5722'; // Change border on right-click
+            });
+    
+            container.addEventListener('mouseover', function() {
+                container.style.border = '2px solid #007bff'; // Change border when mouse over
+            });
+    
+            container.addEventListener('mouseout', function() {
+                container.style.border = '1px solid #ddd'; // Restore the border when mouse leaves
+            });
+    
+            container.addEventListener('mousedown', function() {
+                container.style.backgroundColor = '#f0f0f0'; // Change background color when mouse button is pressed
+            });
+    
+            container.addEventListener('mouseup', function() {
+                container.style.backgroundColor = 'white'; // Restore the background color when mouse button is released
+            });
+    
+            container.addEventListener('mousemove', function() {
+                container.style.transform = 'scale(1.05)'; // Zoom in when mouse moves over
+            });
+    
+            container.addEventListener('mouseleave', function() {
+                container.style.transform = 'scale(1)'; // Restore the original size when mouse leaves
+            });
+
+            // Get the Valorant div by its ID
+            const valorantDiv = document.getElementById("valorant");
+
+            // Add a click event listener to the div
+            valorantDiv.addEventListener("click", function() {
+            // Redirect to the trailer page
+            window.location.href = "valorant_trailer.html";
+            });
+
+            document.getElementById("bgmi-box").onclick = function() {
+            window.location.href = 'bgmi_trailer.html';
+            }
+
+            document.getElementById("hackathon-box").onclick = function() {
+            window.location.href = 'hackathon_trailer.html';
+            };
+
+            document.getElementById("ctf-box").onclick = function() {
+            window.location.href = 'ctf_trailer.html';
+            };
+
+            document.getElementById("ideathon-box").onclick = function() {
+            window.location.href = 'ideathon_trailer.html';
+            };
+
+        });
+    </script>
+    
+</body>
+</html>

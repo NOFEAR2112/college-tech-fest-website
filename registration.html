@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Registration Form</title>
+</head>
+<body id="sky-background">
+    <header id="header">
+        <h1>Registration Form</h1>
+    </header>
+    <br>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_event.html">About Event</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="registration.html">Registration</a></li>
+        </ul>
+    </nav>
+
+    <section class="registration-form">
+        <form action="submit_registration.php" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="collegeName">College Name</label>
+                <input type="text" id="collegeName" name="collegeName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="yearOfStudy">Year of Study</label>
+                <select id="yearOfStudy" name="yearOfStudy" required>
+                    <option value="1st Year">1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd Year</option>
+                    <option value="4th Year">4th Year</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="branchOfStudy">Branch of Study</label>
+                <select id="branchOfStudy" name="branchOfStudy" required>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="events">Select Events:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="hackathon" name="events" value="Hackathon"> Hackathon</label>
+                    <label><input type="checkbox" id="ctf" name="events" value="CTF"> CTF (Capture The Flag)</label>
+                    <label><input type="checkbox" id="ideathon" name="events" value="Ideathon"> Ideathon</label>
+                    <label><input type="checkbox" id="valorant" name="events" value="Valorant"> Valorant Tournament</label>
+                    <label><input type="checkbox" id="bgmi" name="events" value="BGMI"> BGMI Championship</label>
+                </div>
+            </div>
+            <br>    
+
+            <div class="form-group">
+                <label for="howDidYouHear">How did you hear about this event?</label>
+                <select id="howDidYouHear" name="howDidYouHear" required>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Poster">Poster</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Register">
+        </form>
+    </section>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const collegeName = document.getElementById("collegeName").value;
+            const yearOfStudy = document.getElementById("yearOfStudy").value;
+            const branchOfStudy = document.getElementById("branchOfStudy").value;
+            const events = document.querySelectorAll('input[name="events"]:checked');
+            const howDidYouHear = document.getElementById("howDidYouHear").value;
+
+            if (!name) {
+                alert("Please fill in the Name field.");
+                return false;
+            }
+
+            if (!email) {
+                alert("Please fill in the Email field.");
+                return false;
+            }
+
+            if (!phone) {
+                alert("Please fill in the Phone Number field.");
+                return false;
+            }
+
+            if (!collegeName) {
+                alert("Please fill in the College Name field.");
+                return false;
+            }
+
+            if (yearOfStudy === "Year of Study") {
+                alert("Please select a Year of Study.");
+                return false;
+            }
+
+            if (branchOfStudy === "Branch of Study") {
+                alert("Please select a Branch of Study.");
+                return false;
+            }
+
+            if (events.length === 0) {
+                alert("Please select at least one event.");
+                return false;
+            }
+
+            if (howDidYouHear === "How did you hear about this event?") {
+                alert("Please select how you heard about this event.");
+                return false;
+            }
+
+            // Redirect to the security page if the form is valid
+            window.location.href = "security.html";
+            return false;
+        }
+    </script>
+</body>
+</html>

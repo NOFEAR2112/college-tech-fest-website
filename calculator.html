@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Expense Calculator</title>
+</head>
+<body id="calculator-body">
+    <header id="header">
+        
+        <h1>Expense Calculator</h1> 
+    </header>
+    <br>
+    <nav>
+        <ul>
+            <li><a href="index.html" style="color: darkblue;">Home</a></li>
+            <li><a href="about_event.html" style="color: darkblue;">About Event</a></li>
+            <li><a href="calculator.html" style="color: darkblue;">Calculator</a></li>
+            <li><a href="registration.html" style="color: darkblue;">Registration</a></li>
+        </ul>
+    </nav>
+
+    <section class="expense-calculator">
+        <h2 style="color:red;">Calculate Your Expenses</h2>
+        
+        <div class="calculator-form">
+            <div class="form-group">
+                <label for="foodExpense" style="color:red;">Food Expenses (₹)</label>
+                <input type="number" id="foodExpense" required>
+            </div>
+
+            <div class="form-group">
+                <label for="entertainmentExpense" style="color:red;">Entertainment Expenses (₹)</label>
+                <input type="number" id="entertainmentExpense" required>
+            </div>
+
+            <div class="form-group">
+                <label for="shoppingExpense" style="color:red;">Shopping Expenses (₹)</label>
+                <input type="number" id="shoppingExpense" required>
+            </div>
+
+            <button onclick="calculateExpenses()">Calculate</button>
+
+            <div class="result">
+                <h3>Expense Summary</h3>
+                <p>Total Expenses: ₹<span id="totalExpense">0</span></p>
+                <p>Food Expense Percentage: <span id="foodExpensePercentage">0%</span></p>
+                <p>Entertainment Expense Percentage: <span id="entertainmentExpensePercentage">0%</span></p>
+                <p>Shopping Expense Percentage: <span id="shoppingExpensePercentage">0%</span></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function calculateExpenses() {
+            const foodExpense = parseFloat(document.getElementById("foodExpense").value) || 0;
+            const entertainmentExpense = parseFloat(document.getElementById("entertainmentExpense").value) || 0;
+            const shoppingExpense = parseFloat(document.getElementById("shoppingExpense").value) || 0;
+
+            const totalExpense = foodExpense + entertainmentExpense + shoppingExpense;
+
+            const foodExpensePercentage = ((foodExpense / totalExpense) * 100).toFixed(2) + "%";
+            const entertainmentExpensePercentage = ((entertainmentExpense / totalExpense) * 100).toFixed(2) + "%";
+            const shoppingExpensePercentage = ((shoppingExpense / totalExpense) * 100).toFixed(2) + "%";
+
+            document.getElementById("totalExpense").textContent = totalExpense;
+            document.getElementById("foodExpensePercentage").textContent = foodExpensePercentage;
+            document.getElementById("entertainmentExpensePercentage").textContent = entertainmentExpensePercentage;
+            document.getElementById("shoppingExpensePercentage").textContent = shoppingExpensePercentage;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+/* Reset some default styles */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    color: black;
+    
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    margin: 0px;
+}
+#header{
+    padding:40px;    
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+section h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Event container styles (if needed) */
+.event-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.event-container h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.event-container p {
+    margin: 10px 0;
+}
+
+/* Table styles (if needed) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Link styles (if needed) */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.registration-link {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+a.registration-link:hover {
+    background-color: #0056b3;
+}
+
+/* Form specific styles */
+.registration-form {
+    align-self: center;
+    width: 97%;
+    padding: 20px;
+    padding-right: 0px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-repeat: repeat;
+    padding-right:  40px;
+    padding-left: 40px;
+
+    
+    
+    
+}
+
+.registration-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="tel"],
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Display checkboxes in a single line */
+.registration-form label input[type="checkbox"] {
+    display: inline;
+    margin-right: 10px;
+}
+
+.registration-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.registration-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styles for the captcha and security features */
+.captcha-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.captcha-image {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.captcha-input {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.captcha-verify {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.captcha-verify:hover {
+    background-color: #0056b3;
+}
+
+.security-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.security-info label {
+    font-weight: bold;
+}
+
+.security-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: auto;
+}
+
+.captcha-box {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.captcha-image {
+    text-align: center;
+}
+
+.captcha-input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.captcha-verify {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.captcha-verify:hover {
+    background-color: #0056b3;
+}
+
+/* Add these styles to styles.css for the calculator */
+.expense-calculator {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #e3e3e3;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+.calculator-form {
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.result {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #e3e3e3;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.result h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+.result p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Specific styles for labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Animation for the Calculate button */
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #003c80;
+}
+
+/* Style input elements */
+input[type="number"] {
+    width: 80px;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+/* Additional styles for fun elements */
+h1 {
+    color: white;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Style the result container */
+.result {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+/* Common styles for all pages */
+/* ... (Your existing common styles) ... */
+
+/* Styles for the calculator page */
+.expense-calculator {
+    background-image: url('images (1).jpeg');
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+}
+
+.expense-calculator h2 {
+    color: #007bff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.calculator-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    background-color: #f4f4f4;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #e3e3e3;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.result h3 {
+    margin: 0;
+    color: #007bff;
+    font-size: 24px;
+}
+
+.result p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#calculator-body {
+    background-image: url('images.jpeg');
+    margin: 0;
+    padding: 0;
+    
+    
+  }
+
+#sky-background{
+    background-image: url('sky.jpeg');
+    margin: 0;
+    padding: 0;
+}
+
+#joystick{
+    background-image: url('random.jpeg');
+}
+#backie{
+    background-image: url('backie.jpeg  ');
+    margin: 0px;
+    padding: 0px;
+}   
+#radius{
+    border-radius: 30px;
+}
+.width{
+    width: 50%;
+    padding-left: 40%;
+    border-radius: 30px;
+}
+
+/* Common styles for all pages */
+
+/* Styles for the logo */
+#logo {
+    width: 100px; /* Adjust the width as needed to make it larger */
+    height: 100px;
+    margin-right: 10px; /* Margin to separate the logo from text */
+    float: left; /* Float the logo to the left to place it in the corner */
+    margin-top: -22px; /* Adjust margin-top for vertical positioning */
+    vertical-align: bottom;
+    border-radius: 10px;
+}
+
+
+.security{
+    margin: 0px;
+    padding: 0px;
+    background-image: url('sky.jpeg');
+    background-repeat: repeat;
+    
+}
+
+.security-header{
+    padding-top:60px ;
+}
+
+/* Add this style for the success message */
+.success-message {
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.success-message h2 {
+    margin-bottom: 10px;
+}
+
+/* Add this style for the decorative box */
+.decorative-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #e3e3e3;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ... (Other common styles) ... */
